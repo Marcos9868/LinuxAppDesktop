@@ -1,6 +1,19 @@
-﻿namespace Bootstrap;
+﻿using Application.UseCases.Projects.CreateProject;
+using Application.UseCases.Projects.GetProjects;
+using Infrastructure.Data.IoC;
+using Microsoft.Extensions.DependencyInjection;
 
-public class Class1
+namespace Bootstrap;
+
+public static class Program 
 {
+  public static IServiceProvider Build()
+  {
+    var services = new ServiceCollection();
+    services.AddTransient<CreateProjectHandler>();
+    services.AddTransient<GetProjectsHandler>();
 
+    services.AddInfrastructure();
+    return services.BuildServiceProvider();
+  }
 }
