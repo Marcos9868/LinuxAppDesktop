@@ -3,9 +3,9 @@ using Application.UseCases.Projects.GetProjects;
 using Infrastructure.Data.IoC;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Bootstrap;
+namespace Bootstrap.Data.IoC;
 
-public static class Program 
+public static class Class1 
 {
   public static IServiceProvider Build()
   {
